@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "400573865130",
+    "firebase_url": "https://uniopetsapnew.firebaseio.com",
+    "project_id": "uniopetsapnew",
+    "storage_bucket": "uniopetsapnew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400573865130:android:522a35f5f660ca79",
+        "android_client_info": {
+          "package_name": "com.example.guilhermetragueta.uniopetsap20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "400573865130-0bnanb7i8b6pe7hjsob2bj6rcv89ll4o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guilhermetragueta.uniopetsap20",
+            "certificate_hash": "514578753a4acac145ea149e633d85f065c978e3"
+          }
+        },
+        {
+          "client_id": "400573865130-6rfln343sfvqs0s3u65uc886cbi2een2.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "400573865130-6rfln343sfvqs0s3u65uc886cbi2een2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeI15PR1T9d_AcTjXeVxY3vG1tCAAJfSs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400573865130-6rfln343sfvqs0s3u65uc886cbi2een2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
