@@ -10,11 +10,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.facebook.CallbackManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends Activity {
@@ -24,6 +30,9 @@ public class MainActivity extends Activity {
     private EditText editSenha;
     private Button btnNovoUsuario;
     private Button btnEntrar;
+    private CallbackManager callbackManager;
+    private LoginButton btnFacebookLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +50,31 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 callActivity(CadastrarUsuarioActivity.class);
+            }
+        });
+
+        callbackManager = CallbackManager.Factory.create();
+        btnFacebookLogin = findViewById(R.id.btnFacebookLogin);
+
+        // Metodo usado para realizar o login no app com o Facebook
+        btnFacebookLogin.setReadPermissions("email");
+        btnFacebookLogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                Toast.makeText(MainActivity.this, "Seja bem vindo!",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(MainActivity.this, "Ops! A sua solicitação foi cancelada. Tente novamente.",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                Toast.makeText(MainActivity.this, "Ops! Ocorreu um erro durante a autenticação. Por gentileza, verifique",
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
