@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".Activity.Home">
 
     <Button
         android:id="@+id/btnLogout"
@@ -15,4 +15,15 @@
         android:text="Sair"
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="344dp" />
+
+    <TextView
+        android:id="@+id/txtLocaliza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="155dp"
+        android:text="Localizar os campus UniOpet"
+        android:textSize="18sp" />
+
 </RelativeLayout>

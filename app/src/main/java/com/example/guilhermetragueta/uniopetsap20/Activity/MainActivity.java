@@ -1,19 +1,21 @@
-package com.example.guilhermetragueta.uniopetsap20;
+package com.example.guilhermetragueta.uniopetsap20.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
+import com.example.guilhermetragueta.uniopetsap20.R;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.facebook.CallbackManager;
@@ -28,7 +30,7 @@ public class MainActivity extends Activity {
     private FirebaseAuth firebaseAuth;
     private EditText editEmail;
     private EditText editSenha;
-    private Button btnNovoUsuario;
+    private TextView txtNovoCadastro;
     private Button btnEntrar;
     private CallbackManager callbackManager;
     private LoginButton btnFacebookLogin;
@@ -42,11 +44,11 @@ public class MainActivity extends Activity {
         firebaseAuth = FirebaseAuth.getInstance();
         editEmail = findViewById(R.id.editEmail);
         editSenha = findViewById(R.id.editSenha);
-        btnNovoUsuario = findViewById(R.id.btnNovoUsuario);
+        txtNovoCadastro = findViewById(R.id.txtNovoCadastro);
         btnEntrar = findViewById(R.id.btnEntrar);
 
         // Metodo responsavel por redirecionar o usuario para tela de 'Cadastrar Novo Usuario'
-        btnNovoUsuario.setOnClickListener(new View.OnClickListener() {
+        txtNovoCadastro.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 callActivity(CadastrarUsuarioActivity.class);
@@ -61,22 +63,52 @@ public class MainActivity extends Activity {
         btnFacebookLogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
+
                 Toast.makeText(MainActivity.this, "Seja bem vindo!",
                         Toast.LENGTH_SHORT).show();
+                callActivity(Home.class);
             }
 
             @Override
             public void onCancel() {
-                Toast.makeText(MainActivity.this, "Ops! A sua solicitação foi cancelada. Tente novamente.",
-                        Toast.LENGTH_SHORT).show();
+                Log.d( "ERRO", "ERRO - onCancel");
+                  Toast.makeText(MainActivity.this, "Ops! A sua solicitação foi cancelada. Tente novamente.",
+                          Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onError(FacebookException exception) {
-                Toast.makeText(MainActivity.this, "Ops! Ocorreu um erro durante a autenticação. Por gentileza, verifique",
-                        Toast.LENGTH_SHORT).show();
+                Log.d( "ERRO", "ERRO - onError");
+                  Toast.makeText(MainActivity.this, "Ops! Ocorreu um erro durante a autenticação. Por gentileza, verifique",
+                          Toast.LENGTH_SHORT).show();
+
             }
         });
+
+
+        callbackManager = CallbackManager.Factory.create();
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        Toast.makeText(MainActivity.this, "Seja bem vindo!",
+                                Toast.LENGTH_SHORT).show();
+                        callActivity(Home.class);
+                    }
+
+                    @Override
+                    public void onCancel() {
+                          Toast.makeText(MainActivity.this, "Ops! A sua solicitação foi cancelada. Tente novamente.",
+                                  Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        Toast.makeText(MainActivity.this, "Ops! Ocorreu um erro durante a autenticação. Por gentileza, verifique",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         // Metodo responsavel por realizar o login no app.
         btnEntrar.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +151,12 @@ public class MainActivity extends Activity {
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

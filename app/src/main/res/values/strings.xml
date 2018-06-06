@@ -2,5 +2,7 @@
     <string name="app_name">UniOpetSAP 2.0</string>
     <string name="facebook_app_id">1354069421361133</string>
     <string name="fb_login_protocol_scheme">fb1354069421361133</string>
+    <string name="title_activity_localiza_uni_opet">Map</string>
+    <string name="title_activity_map_reboucas">Map</string>
 
 </resources>
