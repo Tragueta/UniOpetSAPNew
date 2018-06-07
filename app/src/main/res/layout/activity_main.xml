@@ -12,9 +12,9 @@
         android:id="@+id/editEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="216dp"
+        android:layout_marginTop="191dp"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
@@ -24,9 +24,7 @@
         android:id="@+id/editSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="168dp"
+        android:layout_centerInParent="true"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -38,19 +36,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="99dp"
+        android:layout_marginBottom="158dp"
         android:text="Entrar" />
 
-    <com.facebook.login.widget.LoginButton
+    <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
         android:id="@+id/btnFacebookLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        xmlns:facebook="http://schemas.android.com/apk/res-auto"
-        facebook:com_facebook_login_text="Entrar com o Facebook"
-        android:layout_marginTop="214dp" />
+        android:layout_marginBottom="100dp"
+        facebook:com_facebook_login_text="Entrar com o Facebook" />
 
     <TextView
         android:id="@+id/txtNovoCadastro"

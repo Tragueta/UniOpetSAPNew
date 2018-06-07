@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.PerfilUsuario">
+
+    <TextView
+        android:id="@+id/labelNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="119dp"
+        android:text="Nome:"
+        android:textSize="18sp"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/labelSobrenome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/labelNome"
+        android:layout_marginTop="177dp"
+        android:text="Sobrenome:"
+        android:textSize="18sp"
+        android:layout_alignLeft="@+id/labelNome" />
+
+    <TextView
+        android:id="@+id/labelEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/labelNome"
+        android:layout_marginTop="235dp"
+        android:text="Email:"
+        android:textSize="18sp"
+        android:layout_alignLeft="@+id/labelNome" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/labelNome"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtSobrenome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/labelSobrenome"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnVoltarHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="81dp"
+        android:text="Voltar"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnAlterarDados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="160dp"
+        android:text="Alterar dados do perfil" />
+
+    <TextView
+        android:id="@+id/labelDados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Dados do Perfil"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/labelEmail"
+        android:layout_alignLeft="@+id/txtNome"
+        android:layout_alignStart="@+id/txtNome"
+        android:layout_marginLeft="-7dp"
+        android:layout_marginStart="-7dp"
+        android:textSize="18sp" />
+
+</RelativeLayout>

@@ -167,8 +167,9 @@ public class MainActivity extends Activity {
     }
 
     public void updateUI(FirebaseUser currentUser){
-        if(currentUser != null)
+        if(currentUser != null){
             callActivity(Home.class);
+        }
     }
 
     // Metodo usado para trocar de telas

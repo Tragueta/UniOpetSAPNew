@@ -11,16 +11,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.guilhermetragueta.uniopetsap20.Class.Usuario;
 import com.example.guilhermetragueta.uniopetsap20.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
 
 public class CadastrarUsuarioActivity extends Activity {
 
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference mDatabase;
+    private EditText novoNome;
+    private EditText novoSobrenome;
     private EditText editEmail;
     private EditText editSenha;
     private Button btnVoltar;
@@ -32,6 +40,10 @@ public class CadastrarUsuarioActivity extends Activity {
         setContentView(R.layout.activity_cadastrar_usuario);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference("Usuario");
+
+        novoNome = findViewById(R.id.editNovoNome);
+        novoSobrenome = findViewById(R.id.editNovoSobrenome);
         editEmail = findViewById(R.id.editNovoEmail);
         editSenha = findViewById(R.id.editNovaSenha);
         btnCadastrarUsuario = findViewById(R.id.btnCadastrar);
@@ -72,18 +84,33 @@ public class CadastrarUsuarioActivity extends Activity {
                                     if (task.isSuccessful()) {
                                         FirebaseUser user = firebaseAuth.getCurrentUser();
                                         updateUI(user);
+
                                     } else {
                                         Log.w("ERRORCAD", "createUserWithEmail:failure", task.getException());
                                         Toast.makeText(CadastrarUsuarioActivity.this, "Falha na autenticação.", Toast.LENGTH_SHORT).show();
                                         updateUI(null);
                                     }
+
+                                    FirebaseUser user = firebaseAuth.getCurrentUser();
+                                    String idUsuario = UUID.randomUUID().toString();
+
+                                    Usuario novoUsuario = new Usuario();
+                                    novoUsuario.setId(idUsuario);
+                                    novoUsuario.setNome(novoNome.getText().toString());
+                                    novoUsuario.setSobrenome(novoSobrenome.getText().toString());
+                                    novoUsuario.setidAcesso(user.getUid().toString());
+                                    novoUsuario.setEmailAcesso(user.getEmail().toString());
+
+                                    mDatabase.child(novoUsuario.getidAcesso()).setValue(novoUsuario);
+                                    Toast.makeText(CadastrarUsuarioActivity.this,"Cadastro realizado com sucesso!",Toast.LENGTH_SHORT).show();
+
+                                    callActivity(Home.class);
                                 }
                             });
                 }
             }
         });
     }
-
 
     // Metodo resposavel por apresentar a nova tela
     private void callActivity(Class newActivity) {

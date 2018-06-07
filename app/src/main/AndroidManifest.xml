@@ -60,7 +60,9 @@
             android:label="@string/title_activity_localiza_uni_opet" />
         <activity
             android:name=".Activity.MapReboucas"
-            android:label="@string/title_activity_map_reboucas"></activity>
+            android:label="@string/title_activity_map_reboucas" />
+        <activity android:name=".Activity.PerfilUsuario" />
+        <activity android:name=".Activity.AlterarPerfilUsuario"></activity>
     </application>
 
 </manifest>
