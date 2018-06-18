@@ -5,20 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.MainActivity">
+    tools:context=".activity.MainActivity"
+    android:background="#FF000000">
 
 
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="191dp"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
-        android:textAlignment="center" />
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="#FFFFFCFD"
+        android:textColorHint="#FFFFFCFD" />
 
     <EditText
         android:id="@+id/editSenha"
@@ -28,7 +31,9 @@
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#FFFFFCFD"
+        android:textColorHint="#FFFFFCFD"/>
 
     <Button
         android:id="@+id/btnEntrar"
@@ -37,7 +42,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="158dp"
-        android:text="Entrar" />
+        android:background="@android:color/darker_gray"
+        android:text="Entrar"
+        android:textColor="#FF000000" />
 
     <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
         android:id="@+id/btnFacebookLogin"
@@ -57,14 +64,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="44dp"
         android:text="Não possui cadastro? Inscreva-se."
+        android:textColor="#FFFFFCFD"
         android:textColorLink="@color/common_google_signin_btn_text_light_focused" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="121dp"
-        android:layout_height="127dp"
+        android:layout_width="214dp"
+        android:layout_height="186dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:src="@android:drawable/sym_def_app_icon" />
+        android:src="@mipmap/locus_icon_black" />
+
 </RelativeLayout>

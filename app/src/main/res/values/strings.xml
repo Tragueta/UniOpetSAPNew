@@ -4,5 +4,6 @@
     <string name="fb_login_protocol_scheme">fb1354069421361133</string>
     <string name="title_activity_localiza_uni_opet">Map</string>
     <string name="title_activity_map_reboucas">Map</string>
+    <string name="title_activity_unidades_uni_opet">Map</string>
 
 </resources>

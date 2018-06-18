@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AlterarSenha">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:text="Alterar Senha"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/labelNovaSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="185dp"
+        android:text="Informe a nova senha:"
+        android:textSize="18sp"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/editNovaSenha"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/labelNovaSenha"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/labelConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/labelNovaSenha"
+        android:layout_centerVertical="true"
+        android:text="Confirme sua senha:"
+        android:textSize="18sp"
+        android:layout_alignLeft="@+id/labelNovaSenha" />
+
+    <EditText
+        android:id="@+id/editConfirmarSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/labelConfirmar"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_toEndOf="@+id/labelNovaSenha"
+        android:layout_toRightOf="@+id/labelNovaSenha"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnSalvarSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="150dp"
+        android:text="Salvar" />
+
+    <Button
+        android:id="@+id/btnVoltarAlterarDados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="89dp"
+        android:text="Voltar" />
+
+    <TextView
+        android:id="@+id/labelSenhaAtual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/labelNovaSenha"
+        android:layout_marginTop="123dp"
+        android:text="Informe a senha atual:"
+        android:textSize="18sp"
+        android:layout_alignLeft="@+id/labelNovaSenha" />
+
+    <EditText
+        android:id="@+id/editSenhaAtual"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/labelSenhaAtual"
+        android:layout_alignEnd="@+id/editNovaSenha"
+        android:layout_alignRight="@+id/editNovaSenha"
+        android:ems="10"
+        android:inputType="textPassword" />
+</RelativeLayout>

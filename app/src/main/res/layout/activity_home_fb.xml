@@ -4,42 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.Home"
-    android:background="#FF000000">
+    android:background="#FF000000" >
 
     <Button
-        android:id="@+id/btnLogout"
+        android:id="@+id/btnLogoutFB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="38dp"
         android:text="Sair"
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="344dp"
-        android:textColor="#FF000000"
         android:background="@android:color/darker_gray"/>
 
     <TextView
-        android:id="@+id/txtLocaliza"
+        android:id="@+id/txtLocalizaFB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="181dp"
+        android:layout_marginBottom="116dp"
         android:text="Localizar os campus UniOpet"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/btnPerfil"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="99dp"
-        android:background="@android:color/darker_gray"
-        android:text="Perfil do Usuário"
-        android:textColor="#FF000000" />
+        android:textSize="18sp"
+        android:textColor="@android:color/background_light"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -49,5 +37,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="69dp"
         android:src="@mipmap/locus_icon_black" />
+
 
 </RelativeLayout>

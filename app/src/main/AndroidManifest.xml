@@ -3,31 +3,29 @@
     package="com.example.guilhermetragueta.uniopetsap20">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality. 
-    -->
+    // Permissoes para fazer utilizacao da localizacao/GPS
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    // Permissoes para utilizacao dos arquivos/imagens
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/locus_icon_black"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/locus_icon_black"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.Home" />
-        <activity android:name=".Activity.CadastrarUsuarioActivity" />
+        <activity android:name=".activity.Home" />
+        <activity android:name=".activity.CadastrarUsuarioActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -49,20 +47,21 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.LocalizarUniOpet" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBk3RWDLbnPUvp3VM45iE-u0mu6isUjXyI" />
 
         <activity
-            android:name=".Activity.MapBomRetiro"
-            android:label="@string/title_activity_localiza_uni_opet" />
-        <activity
-            android:name=".Activity.MapReboucas"
+            android:name=".activity.UnidadesUniOpet"
             android:label="@string/title_activity_map_reboucas" />
-        <activity android:name=".Activity.PerfilUsuario" />
-        <activity android:name=".Activity.AlterarPerfilUsuario"></activity>
+        <activity
+            android:name=".activity.UnidadesUniOpetFB"
+            android:label="@string/title_activity_map_reboucas" />
+        <activity android:name=".activity.PerfilUsuario" />
+        <activity android:name=".activity.AlterarPerfilUsuario" />
+        <activity android:name=".activity.AlterarSenha" />
+        <activity android:name=".activity.HomeFB"></activity>
     </application>
 
 </manifest>
