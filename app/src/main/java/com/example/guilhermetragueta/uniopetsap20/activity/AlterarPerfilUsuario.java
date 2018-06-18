@@ -79,7 +79,7 @@ public class AlterarPerfilUsuario extends Activity{
     // Objeto que exibirá a imagem selecionada pelo usuário*/
     private ImageView imagemPerfil;
     // Valores que vão aparecer na caixa de diálogo para que o usuário escolha o que fazer.*/
-    private String[] items = {"Selecionar da Biblioteca.", "Cancelar"};
+    private String[] items = {"Selecionar da Biblioteca", "Cancelar"};
     // Constante utilizada para informar que o usuario escolheu a opçcao 'Selecionar da Biblioteca'
     private int SELECT_FILE = 2;
 

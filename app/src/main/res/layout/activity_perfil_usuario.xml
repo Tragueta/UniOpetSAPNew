@@ -55,12 +55,10 @@
         android:layout_width="227dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/txtNome"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="232dp"
+        android:layout_centerVertical="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textSize="18sp"
-        android:layout_alignRight="@+id/txtNome" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btnVoltarHome"
@@ -68,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="25dp"
         android:text="Voltar"
         android:visibility="visible" />
 
@@ -78,20 +76,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="77dp"
+        android:layout_marginBottom="94dp"
         android:text="Alterar dados do perfil" />
 
     <TextView
         android:id="@+id/txtEmail"
         android:layout_width="267dp"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtNome"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="182dp"
-        android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/labelNome"
-        android:textSize="18sp"
-        android:layout_marginLeft="13dp"
-        android:layout_toRightOf="@+id/labelNome" />
+        android:layout_marginBottom="200dp"
+        android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/imgPerfil"

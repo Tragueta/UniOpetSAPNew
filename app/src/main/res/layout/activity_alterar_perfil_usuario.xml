@@ -56,11 +56,9 @@
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/nomeAlterado"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="229dp"
+        android:layout_centerVertical="true"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_alignRight="@+id/nomeAlterado" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/emailAlterado"
@@ -68,10 +66,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/nomeAlterado"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="184dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:layout_alignLeft="@+id/nomeAlterado" />
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/btnVoltarPerfilUsuario"

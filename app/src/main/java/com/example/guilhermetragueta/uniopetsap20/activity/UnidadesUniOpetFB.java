@@ -103,7 +103,7 @@ public class UnidadesUniOpetFB extends FragmentActivity implements OnMapReadyCal
                                     mMap.addMarker(new MarkerOptions().position(bomRetiro).title("Campus Bom Retiro"));
                                     mMap.addMarker(new MarkerOptions().position(localUsuario).title("Você"));
                                     mMap.moveCamera(CameraUpdateFactory.newLatLng(localUsuario));
-                                    zoomMarker(bomRetiro);
+                                    zoomMarker(localUsuario);
 
                                 } catch (Exception e) {
                                     e.printStackTrace();
@@ -125,7 +125,7 @@ public class UnidadesUniOpetFB extends FragmentActivity implements OnMapReadyCal
     private void zoomMarker(LatLng position) {
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(position)
-                .zoom(12).build();
+                .zoom(13).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
